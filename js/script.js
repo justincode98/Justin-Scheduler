@@ -1,7 +1,10 @@
 //GLOBAL VARIABLES----------------------------------------------------------------------------------------------------------------------
 //takes the time from moment as well as formatting it into Weekday, Month Day format
 var date = moment().format("dddd, MMMM Do");
- 
+ //array consisting of time and corresponding text, 24 long each position corresponding to hour
+var textArray = Array(24).fill("");
+textArray[11] = "midday";
+console.log(textArray);
 
 
 
@@ -28,16 +31,16 @@ function createSchedule() {
     $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">12AM</div>
-        <div class="col-md-9 textArea future" id="hour-0"> <p class="w-100 h-100">fill</p> </div>
+        <div class="col-md-9 textArea future" id="hour-0"> <p class="w-100 h-100">${textArray[0]}</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
     //loop handling AM creation
-    for(let i = 1; i < 12; i++) {
+    for(let i = 1; i < 11; i++) {
         $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">${i}AM</div>
-        <div class="col-md-9 textArea future" id="hour-${i}"> <p class="w-100 h-100">fill</p> </div>
+        <div class="col-md-9 textArea future" id="hour-${i}"> <p class="w-100 h-100">${textArray[i]}</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
@@ -47,7 +50,7 @@ function createSchedule() {
     $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">12PM</div>
-        <div class="col-md-9 textArea future" id="hour-12"> <p class="w-100 h-100">fill</p> </div>
+        <div class="col-md-9 textArea future" id="hour-12"> <p class="w-100 h-100">${textArray[11]}</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
@@ -56,7 +59,7 @@ function createSchedule() {
         $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">${i}PM</div>
-        <div class="col-md-9 textArea future" id="hour-${i+12}"> <p class="w-100 h-100">fill</p> </div>
+        <div class="col-md-9 textArea future" id="hour-${i+12}"> <p class="w-100 h-100">${textArray[i+12]}</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
@@ -78,8 +81,7 @@ function colorSchedule() {
     }
 }
 
-//array consisting of time and corresponding text
-var textArray 
+
 
 
 $(document).ready(function() {
