@@ -19,13 +19,15 @@ $(document).ready(function() {
         the first (leftmost) contains the hours
         the second (center) contains the text the user inputs and has an id of hour-[corresponding number] so it may be colored later
          although they default to future during initialization
-        the third (right) contains the save button
+        the third (right) contains the save button from <span class="material-icons-round">note_add</span>
+        <div class="col-sm-1 saveBtn hour"> <i class="material-icons">note_add</i></div>
+        <i class="bi bi-save-fill"></i> bootstrap
         */
         $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">${i}</div>
         <div class="col-md-9 textArea future" id="hour-${i}">field</div>
-        <div class="col-sm-1 saveBtn hour">button</div>
+        <div class="col-sm-1 saveBtn"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
     }

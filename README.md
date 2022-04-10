@@ -21,3 +21,4 @@ Future: Green
 ## Known Issues
 Local Storage unimplemented
 Styling
+Button functionality
