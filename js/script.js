@@ -1,8 +1,3 @@
-//i want
-//local storage
-//moment to keep track of time and turn rows green red or grey
-//bootstrap to finish the rest of hte layut
-//class of time blocks is container
 $(document).ready(function() {
     console.log("BEGIN!");
     //$(".container").append("<p class='row past time-block hour'> test </p>");
