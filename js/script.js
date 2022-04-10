@@ -32,7 +32,7 @@ function createSchedule() {
         `<div class="row">
         <div class="col-sm-2 hour">12AM</div>
         <div class="col-md-9 textArea future" id="hour-0"> <p class="w-100 h-100">${textArray[0]}</p> </div>
-        <div class="col-sm-1 saveBtn text-center id="btn-0"> <i class="bi bi-save-fill"></i> </div>
+        <div class="col-sm-1 saveBtn text-center" id="btn-0"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
     //loop handling AM creation
@@ -41,7 +41,7 @@ function createSchedule() {
         `<div class="row">
         <div class="col-sm-2 hour">${i}AM</div>
         <div class="col-md-9 textArea future" id="hour-${i}"> <p class="w-100 h-100">${textArray[i]}</p> </div>
-        <div class="col-sm-1 saveBtn text-center id="btn-${i}"> <i class="bi bi-save-fill"></i> </div>
+        <div class="col-sm-1 saveBtn text-center" id="btn-${i}"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
     }
@@ -51,7 +51,7 @@ function createSchedule() {
         `<div class="row">
         <div class="col-sm-2 hour">12PM</div>
         <div class="col-md-9 textArea future" id="hour-12"> <p class="w-100 h-100">${textArray[11]}</p> </div>
-        <div class="col-sm-1 saveBtn text-center id="btn-12"> <i class="bi bi-save-fill"></i> </div>
+        <div class="col-sm-1 saveBtn text-center" id="btn-12"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
     //loop handling AM creation, add 12 to id="hour-${i}"
@@ -60,7 +60,7 @@ function createSchedule() {
         `<div class="row">
         <div class="col-sm-2 hour">${i}PM</div>
         <div class="col-md-9 textArea future" id="hour-${i+12}"> <p class="w-100 h-100">${textArray[i+12]}</p> </div>
-        <div class="col-sm-1 saveBtn text-center id="btn-${i+12}"> <i class="bi bi-save-fill"></i> </div>
+        <div class="col-sm-1 saveBtn text-center" id="btn-${i+12}"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
     }
@@ -117,6 +117,12 @@ $(document).ready(function() {
 
 
     //need to save based on button id
+    //doesn't work if you actually click the icon, only work when clicking outside of the saved icon
+    $(".saveBtn").on("click", (e) => {
+        console.dir(e);
+        let btnX = e.target.id; 
+        console.log("pressed button " + btnX);
+    });
 
 
 });
