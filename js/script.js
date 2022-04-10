@@ -16,6 +16,7 @@ the second (center) contains the text the user inputs and has an id of hour-[cor
 the third (right) contains the save button from <span class="material-icons-round">note_add</span>
 <div class="col-sm-1 saveBtn hour"> <i class="material-icons">note_add</i></div>
 <i class="bi bi-save-fill"></i> bootstrap
+also note we use p in order to make selectable fill in text later, w-100 h-100 fills p 100% to it's parent dive
 */
 function createSchedule() {
     //create 24 hour time blocks
@@ -27,7 +28,7 @@ function createSchedule() {
     $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">12AM</div>
-        <div class="col-md-9 textArea future" id="hour-0"> <p>field</p> </div>
+        <div class="col-md-9 textArea future" id="hour-0"> <p class="w-100 h-100">fill</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
@@ -36,7 +37,7 @@ function createSchedule() {
         $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">${i}AM</div>
-        <div class="col-md-9 textArea future" id="hour-${i}"> <p>field</p> </div>
+        <div class="col-md-9 textArea future" id="hour-${i}"> <p class="w-100 h-100">fill</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
@@ -46,7 +47,7 @@ function createSchedule() {
     $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">12PM</div>
-        <div class="col-md-9 textArea future" id="hour-12"> <p>field</p> </div>
+        <div class="col-md-9 textArea future" id="hour-12"> <p class="w-100 h-100">fill</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
     );
@@ -55,7 +56,7 @@ function createSchedule() {
         $(".container").append(
         `<div class="row">
         <div class="col-sm-2 hour">${i}PM</div>
-        <div class="col-md-9 textArea future" id="hour-${i+12}"> <p>field</p> </div>
+        <div class="col-md-9 textArea future" id="hour-${i+12}"> <p class="w-100 h-100">fill</p> </div>
         <div class="col-sm-1 saveBtn text-center"> <i class="bi bi-save-fill"></i> </div>
         </div>`
       );
@@ -87,6 +88,10 @@ $(document).ready(function() {
 
     createSchedule();
     colorSchedule();
+
+    $(".container").on("click", "p", function() {
+        console.log(this);
+    });
 
     
 
