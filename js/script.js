@@ -66,7 +66,8 @@ function createSchedule() {
 
 //retroactively color the center section in accordance to the time for present and past
 function colorSchedule() {
-    var currHours = parseInt(moment().format("hh"));
+    var currHours = parseInt(moment().format("HH"));
+    console.log(currHours);
     //var insertCurrHours = "#hour" + "-" + currHours;
     //colors the present hour
     $("#hour-" + currHours).removeClass("future").addClass("present");
@@ -91,6 +92,23 @@ $(document).ready(function() {
 
     $(".container").on("click", "p", function() {
         console.log(this);
+        let text = $(this)
+        .text()
+        .trim();
+        var textInput = $("<textarea>")
+        .addClass("form-control")
+        .val(text);
+        $(this).replaceWith(textInput);
+        textInput.trigger("focus");
+    });
+
+    $(".container").on("blur", "textarea", function() {
+        console.log(this);
+        let text = $(this).val();
+        let redoP = $("<p>")
+        .addClass("w-100 h-100")
+        .text(text);
+        $(this).replaceWith(redoP);
     });
 
     
