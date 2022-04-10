@@ -19,6 +19,7 @@ Present: Red
 Future: Green  
 
 ## Known Issues
-Local Storage unimplemented
-Styling
-Button functionality
+Local Storage unimplemented  
+Styling  
+Button functionality  
+Code needs additional refactoring for readability
